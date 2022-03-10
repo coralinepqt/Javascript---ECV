@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP2 - Exo 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <main>
+        <img onclick="turn(this)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png" alt="">
+    </main>
+
+</body>
+<script>
+    let n = 0;
+
+    function turn(el) {
+        n = n + 90;
+        el.style.transform = "rotate(" + n + "deg)";
+    }
+</script>
+
+</html>

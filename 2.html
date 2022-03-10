@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP2 - Exo 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <ul>
+        <li onclick="topLi(this)">Paris</li>
+        <li onclick="topLi(this)">Nantes</li>
+        <li onclick="topLi(this)">Lyon</li>
+        <li onclick="topLi(this)">Marseille</li>
+        <li onclick="topLi(this)">Tours</li>
+        <li onclick="topLi(this)">Laval</li>
+        <li onclick="topLi(this)">Brest</li>
+        <li onclick="topLi(this)">La Rochelle</li>
+    </ul>
+</body>
+
+<script>
+    // let oneLi = document.getElementsByTagName('li');
+    // var oneLiList = Array.from(oneLi);
+
+    // for (var i = 0; i < oneLiList.length; i++) {
+    //     oneLiList[i].onclick = topLi(oneLiList[i]);
+    // }
+
+    function topLi(el) {
+        el.parentElement.prepend(el);
+    }
+</script>
+
+</html>

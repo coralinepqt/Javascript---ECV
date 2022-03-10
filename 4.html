@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP2 - Exo 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div style="background-color: pink;width: 50px; height: 50px; position:absolute; top:0; left:0;">
+
+    </div>
+
+</body>
+
+
+<script>
+    let myDiv = document.getElementsByTagName("div")[0];
+    window.onkeydown = move(event);
+
+    function move(e) {
+        let code = e.key;
+        switch (code) {
+            case 37:
+                moveLeft();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 38:
+                moveUp();
+                break;
+            case 40:
+                moveDown();
+                break;
+            default:
+                break;
+        }
+
+
+    };
+</script>
+
+</html>
+
+
+// pas finis

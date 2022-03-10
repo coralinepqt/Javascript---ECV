@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP - Exo 6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <ul>
+        <li>Toto</li>
+        <li>Tata</li>
+        <li>Titi</li>
+        <li>Tutu</li>
+    </ul>
+
+    <script>
+        let newLi = document.createElement("li");
+        newLi.innerHTML = "Nouveau Tata";
+
+        let oldLi = document.getElementsByTagName('li')[1];
+        console.log(oldLi);
+        document.getElementsByTagName('ul')[0].appendChild(newLi);
+        document.getElementsByTagName('ul')[0].replaceChild(newLi, oldLi);
+    </script>
+</body>
+
+</html>

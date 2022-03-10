@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP - Exo 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <script>
+        var myDiv = document.createElement("div");
+        myDiv.style.backgroundColor = "purple";
+        myDiv.style.width = "100%";
+        myDiv.style.height = "300px";
+
+        var myH1 = document.createElement("h1");
+        myH1.innerHTML = "Titre de la page";
+        myH1.style.color = "white";
+        myDiv.style.textTransform = "uppercase";
+
+        document.getElementsByTagName('body')[0].appendChild(myDiv).appendChild(myH1);
+    </script>
+</body>
+
+</html>
