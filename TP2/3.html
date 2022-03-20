@@ -7,31 +7,56 @@
 </head>
 
 <body>
-    <img style="width: 20%;" onclick="changeWidth(this)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png" alt="">
-    <img style="width: 20%;" onclick="changeWidth(this)" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNKeQyOMN28w-hhsEH7JK119_VawTrTp_Cj3LVS8QsckIY4nmbCzjdP_YMr3AEu6tOqkw&usqp=CAU" alt="">
+    <img style="width: 100px;" onclick="changeWidth(this)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png" alt="">
+    <img style="width: 100px;" onclick="changeWidth(this)" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNKeQyOMN28w-hhsEH7JK119_VawTrTp_Cj3LVS8QsckIY4nmbCzjdP_YMr3AEu6tOqkw&usqp=CAU" alt="">
 
 </body>
 <script>
     function changeWidth(el) {
-        let images = document.getElementsByTagName("img");
-        let autre = images.find(element => element != el);
 
-        if (el == document.getElementsByTagName("img")[0]) {
-            let tailleImage1 = el.style.width;
-            let tailleImage2 = el.nextSibling.style.width;
-            el.style.width = "calc( " + tailleImage1 + " + 20% )";
+
+        let image1 = document.getElementsByTagName("img")[0];
+        let image2 = document.getElementsByTagName("img")[1];
+
+        if (el == image1) {
+            let image = image1;
+            let autre = image2;
+
+            let tailleImage = image.style.width;
+            let tailleAutre = autre.style.width;
+
+            let newTailleImage = tailleImage.replace("px", "");
+            let newTailleAutre = tailleAutre.replace("px", "");
+
+            newTailleImage = newTailleImage * 1.2;
+
+            image.style.width = newTailleImage + "px";
+
+            if (newTailleAutre > 100) {
+                newTailleAutre = newTailleAutre / 1.2;
+                autre.style.width = newTailleAutre + "px";
+            }
 
         } else {
-            let tailleImage2 = el.style.width;
-            el.style.width = "calc( " + tailleImage2 + " + 20% )";
+            let image = image2;
+            let autre = image1;
+
+            let tailleImage = image.style.width;
+            let tailleAutre = autre.style.width;
+
+            let newTailleImage = tailleImage.replace("px", "");
+            let newTailleAutre = tailleAutre.replace("px", "");
+
+            newTailleImage = newTailleImage * 1.2;
+
+            image.style.width = newTailleImage + "px";
+
+            if (newTailleAutre > 100) {
+                newTailleAutre = newTailleAutre / 1.2;
+                autre.style.width = newTailleAutre + "px";
+            }
         }
-
-        // let taille = el.style.width;
-        // el.style.width = "calc( " + taille + " + 20% )";
-
     }
 </script>
 
 </html>
-
-// pas finis
