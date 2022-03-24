@@ -13,6 +13,8 @@
 
 <script>
     const lesP = document.querySelectorAll("p");
+    lesP[0].innerHTML = "Width : " + window.innerWidth;
+    lesP[1].innerHTML = "Height : " + window.innerHeight;
 
     function size() {
         lesP[0].innerHTML = "Width : " + window.innerWidth;
