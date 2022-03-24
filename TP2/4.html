@@ -21,37 +21,21 @@
         let code = e.keyCode;
         switch (code) {
             case 37:
-                moveLeft();
+                myDiv.style.left = parseInt(myDiv.style.left) - 10 + 'px';
                 break;
             case 39:
-                moveRight();
+                myDiv.style.left = parseInt(myDiv.style.left) + 10 + 'px';
                 break;
             case 38:
-                moveUp();
+                myDiv.style.top = parseInt(myDiv.style.top) - 10 + 'px';
                 break;
             case 40:
-                moveDown();
+                myDiv.style.top = parseInt(myDiv.style.top) + 10 + 'px';
                 break;
             default:
                 break;
         }
     };
-
-    function moveLeft() {
-        myDiv.style.left = parseInt(myDiv.style.left) - 10 + 'px';
-    }
-
-    function moveRight() {
-        myDiv.style.left = parseInt(myDiv.style.left) + 10 + 'px';
-    }
-
-    function moveUp() {
-        myDiv.style.top = parseInt(myDiv.style.top) - 10 + 'px';
-    }
-
-    function moveDown() {
-        myDiv.style.top = parseInt(myDiv.style.top) + 10 + 'px';
-    }
 </script>
 
 </html>
