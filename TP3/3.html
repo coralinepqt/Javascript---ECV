@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP3 - Exo 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+</body>
+
+<script>
+    let divNumber = Math.floor(Math.random() * (15 - 5 + 1)) + 5;
+
+    for (let i = 0; i < divNumber; i++) {
+        let divColor = Math.floor(Math.random() * 16777215).toString(16);
+
+        let currentColorTab = [];
+        currentColorTab[i] = divColor;
+
+        let newDiv = document.createElement("div");
+        newDiv.style.backgroundColor = divColor;
+        newDiv.style.width = "100%";
+        newDiv.style.height = "50px";
+        newDiv.addEventListener('click', color);
+
+        document.getElementsByTagName('body')[0].appendChild(newDiv);
+
+        function color() {
+            let currentColor = this.style.backgroundColor;
+            if (currentColor == "red") {
+                this.style.backgroundColor = currentColorTab[i];
+            } else {
+                this.style.backgroundColor = "red";
+            }
+        }
+    }
+</script>
+
+</html>

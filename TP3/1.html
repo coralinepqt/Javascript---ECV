@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP3 - Exo 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div onclick="color(this)" class="red black" style="background-color: black;width: 50px; height: 50px; margin-bottom: 20px;">
+    </div>
+    <div onclick="color(this)" style="background-color: black;width: 50px; height: 50px;margin-bottom: 20px; ">
+    </div>
+    <div onclick="color(this)" style="background-color: black;width: 50px; height: 50px; ">
+    </div>
+</body>
+
+<script>
+    function color(e) {
+        currentColor = e.style.backgroundColor;
+        if (currentColor == "red") {
+            e.style.backgroundColor = "black";
+        } else {
+            e.style.backgroundColor = "red";
+        }
+    }
+</script>
+
+</html>
