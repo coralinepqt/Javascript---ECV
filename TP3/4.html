@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP3 - Exo 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <ul></ul>
+</body>
+
+<script>
+    document.addEventListener("keydown", affichageTouche);
+    let n = 0;
+
+
+    function affichageTouche(e) {
+        const newItem = document.createElement("li");
+        let mesLi = document.querySelectorAll("li");
+        const maListe = document.querySelector("ul");
+
+        if (mesLi.length > 20) {
+            maListe.removeChild(maListe.firstChild);
+        }
+
+        newItem.appendChild(document.createTextNode(`${e.key}`));
+        document.querySelector("ul").appendChild(newItem);
+    }
+</script>
+
+</html>
