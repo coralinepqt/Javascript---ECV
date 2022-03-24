@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+
+<script>
+    const lesExos = document.querySelectorAll("p");
+
+    function revert(str) {
+        return str.split("").reverse().join("");
+    }
+
+    function ucFirst(world) {
+        return world.charAt(0).toUpperCase() + world.slice(1);
+    }
+
+    function capitalize(str) {
+        let phrase = str.split(" ");
+        let newPhrase = " ";
+        for (let i = 0; i < phrase.length; i++) {
+            newPhrase = newPhrase + " " + phrase[i].charAt(0).toUpperCase() + phrase[i].slice(1);
+        }
+        return newPhrase;
+    }
+
+    function pascalCase(str) {
+        let phrase = str.split(" ");
+        let newPhrase = " ";
+        for (let i = 0; i < phrase.length; i++) {
+            newPhrase = newPhrase + phrase[i].charAt(0).toUpperCase() + phrase[i].slice(1);
+        }
+        return newPhrase;
+    }
+
+    function palindrome(str) {
+        let newStr = str.split("").reverse().join("");
+        if (str == newStr) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function findLongestWord(str) {
+        let phrase = str.split(" ");
+        let motLong = " ";
+        for (let i = 0; i < phrase.length; i++) {
+            if (phrase[i].length > motLong.length) {
+                motLong = phrase[i];
+            }
+        }
+        return motLong;
+    }
+
+    lesExos[0].innerHTML = revert("Hello I'm Robert !");
+    lesExos[1].innerHTML = ucFirst("hello");
+    lesExos[2].innerHTML = capitalize("hello i'm robert");
+    lesExos[3].innerHTML = pascalCase("sentence in pascalCase");
+    lesExos[4].innerHTML = palindrome("kayak");
+    lesExos[5].innerHTML = findLongestWord("Le chemin le plus cours n'est pas toujours le meilleur");
+</script>
+
+</html>
