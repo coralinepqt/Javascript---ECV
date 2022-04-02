@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+
+<script>
+    const lesExos = document.querySelectorAll("p");
+
+    getHashTags = (phrase) => Array.from(phrase.split(" ")).sort((a, b) => b.length - a.length).slice(0, 3).map(mot => "#" + mot);
+
+    removeDuplicate = (tableau) => tableau.filter((item, index) => tableau.indexOf(item) == index);
+
+    intersection = (tab1, tab2) => tab1.filter(item => tab2.includes(item));
+
+    arrayDiff = (tab1, tab2) => tab1.filter(item => !tab2.includes(item)).concat(tab2.filter(item => !tab1.includes(item)));
+
+    combinations = (...theArgs) => theArgs.reduce((prev, current) => prev * current);
+
+
+
+    lesExos[0].innerHTML = getHashTags("Get the avocado became the fruit of the global trade");
+
+    const tab = ["0", "2", "4", "6", "8", "8"];
+    lesExos[1].innerHTML = removeDuplicate(tab);
+
+    const first = ["0", "2", "4", "6", "8", "8"];
+    const second = ["1", "2", "3", "4", "5", "6"];
+    lesExos[2].innerHTML = intersection(first, second);
+
+    lesExos[3].innerHTML = arrayDiff(first, second);
+
+    lesExos[4].innerHTML = combinations(2, 3, 4, 5);
+</script>
+
+</html>
