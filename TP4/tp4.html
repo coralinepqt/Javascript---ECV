@@ -45,12 +45,7 @@
     }
 
     function palindrome(str) {
-        let newStr = str.split("").reverse().join("");
-        if (str == newStr) {
-            return true;
-        } else {
-            return false;
-        }
+        return str.toLowerCase() == str.toLowerCase().split("").reverse().join("");
     }
 
     function findLongestWord(str) {
@@ -68,7 +63,7 @@
     lesExos[1].innerHTML = ucFirst("hello");
     lesExos[2].innerHTML = capitalize("hello i'm robert");
     lesExos[3].innerHTML = pascalCase("sentence in pascalCase");
-    lesExos[4].innerHTML = palindrome("kayak");
+    lesExos[4].innerHTML = palindrome("Kayak");
     lesExos[5].innerHTML = findLongestWord("Le chemin le plus cours n'est pas toujours le meilleur");
 </script>
 
