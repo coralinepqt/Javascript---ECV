@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP7 - Exo 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+</body>
+
+<script>
+    // //fonction 1
+    // async function petiteChaine() {
+    //     try {
+    //         const promesse = await maPromesse("chaine de caractères de plus de 20");
+    //         console.log(promesse);
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // }
+
+    // const maPromesse = (chaine) => {
+    //     return new Promise((successCallback, failureCallback) => {
+    //         if (chaine.length <= 20) {
+    //             successCallback(true);
+    //         } else {
+    //             failureCallback("Echec");
+    //         }
+    //     });
+    // }
+
+    // petiteChaine();
+
+
+    // //fonction 2
+    // async function differenceInt() {
+    //     try {
+    //         const promesse = await maPromesse(6, 9);
+    //         console.log(promesse);
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // }
+
+    // const maPromesse = (int1, int2) => {
+    //     return new Promise((successCallback, failureCallback) => {
+    //         if (int1 > int2) {
+    //             const difference = int1 - int2;
+    //             successCallback(difference);
+    //         } else {
+    //             failureCallback("Echec");
+    //         }
+    //     });
+    // }
+
+    // differenceInt();
+
+
+    //fonction 3
+    async function majorite() {
+        try {
+            const promesse = await maPromesse("21/12/1999");
+            console.log(promesse);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    const maPromesse = (ddn) => {
+        return new Promise((successCallback, failureCallback) => {
+            const ladate = new Date()
+            const date = ladate.getFullYear() - 18 + "-" + ladate.getMonth() + "-" + ladate.getDate();
+
+            const dateNaissance = ddn.substr(6, 4) + "-" + ddn.substr(3, 2) + "-" + ddn.substr(0, 2);
+
+            if (date > dateNaissance) {
+                successCallback(true);
+            } else {
+                failureCallback("Echec");
+            }
+        });
+    }
+
+    majorite();
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP6 - Exo2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+</body>
+
+<script>
+    function merge(objet1, objet2) {
+
+        for (const key in objet2) {
+            if (!objet1.hasOwnProperty(key)) {
+                objet1[key] = objet2[key];
+            } else if (objet1[key] instanceof Array && objet2[key] instanceof Array) {
+                objet1[key] = objet1[key].concat(objet2[key]);
+            }
+        }
+        return objet1;
+    }
+
+    const object = {
+        a: [{
+            x: 2
+        }, {
+            y: 4
+        }],
+        b: [1]
+    };
+
+    const other = {
+        a: [{
+            z: 3
+        }],
+        b: [2, 3],
+        c: 'foo'
+    };
+    console.log(merge(object, other));
+</script>
+
+</html>

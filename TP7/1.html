@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP7 - Exo 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+</body>
+
+<script>
+    function petiteChaine(chaine) {
+        return new Promise((successCallback, failureCallback) => {
+            if (chaine.length <= 20) {
+                successCallback();
+            } else {
+                failureCallback();
+            }
+        })
+    }
+
+    function successCallback() {
+        console.log(true);
+    }
+
+    function failureCallback() {
+        console.error("Echec");
+    }
+
+    const promise = petiteChaine("chaine de caractères de plus de 20");
+    promise.then(successCallback, failureCallback);
+</script>
+
+</html>

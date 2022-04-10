@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP7 - Exo 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+</body>
+
+<script>
+    // //fonction 1
+    // function petiteChaine(chaine) {
+    //     return new Promise((successCallback, failureCallback) => {
+    //         if (chaine.length <= 20) {
+    //             successCallback();
+    //         } else {
+    //             failureCallback();
+    //         }
+    //     })
+    // }
+
+    // function successCallback() {
+    //     console.log(true);
+    // }
+
+    // function failureCallback() {
+    //     console.error("Echec");
+    // }
+
+    // const promise = petiteChaine("chaine de caractères de plus de 20");
+    // promise
+    //     .then(successCallback)
+    //     .catch(failureCallback);
+
+
+    // //fonction 2
+    // function differenceInt(int1, int2) {
+    //     return new Promise((successCallback, failureCallback) => {
+    //         if (int1 > int2) {
+    //             const difference = int1 - int2;
+    //             successCallback(difference);
+    //         } else {
+    //             failureCallback();
+    //         }
+    //     })
+    // }
+
+    // function successCallback(resulat) {
+    //     console.log(resulat);
+    // }
+
+    // function failureCallback() {
+    //     console.error("Echec");
+    // }
+
+    // const promise = differenceInt(6, 9);
+    // promise
+    //  .then(successCallback)
+    //  .catch(failureCallback);
+
+
+    //fonction 3
+    function majorite(ddn) {
+        const ladate = new Date()
+        const date = ladate.getFullYear() - 18 + "-" + ladate.getMonth() + "-" + ladate.getDate();
+
+        const dateNaissance = ddn.substr(6, 4) + "-" + ddn.substr(3, 2) + "-" + ddn.substr(0, 2);
+
+        return new Promise((successCallback, failureCallback) => {
+            if (date > dateNaissance) {
+                successCallback();
+            } else {
+                failureCallback();
+            }
+        })
+    }
+
+    function successCallback() {
+        console.log(true);
+    }
+
+    function failureCallback() {
+        console.error("Echec");
+    }
+
+    const promise = majorite("21/12/1999");
+    promise
+        .then(successCallback)
+        .catch(failureCallback);
+</script>
+
+</html>

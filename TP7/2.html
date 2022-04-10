@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP7 - Exo 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+</body>
+
+<script>
+    function differenceInt(int1, int2) {
+        return new Promise((successCallback, failureCallback) => {
+            if (int1 > int2) {
+                const difference = int1 - int2;
+                successCallback(difference);
+            } else {
+                failureCallback();
+            }
+        })
+    }
+
+    function successCallback(resulat) {
+        console.log(resulat);
+    }
+
+    function failureCallback() {
+        console.error("Echec");
+    }
+
+    const promise = differenceInt(6, 9);
+    promise.then(successCallback, failureCallback);
+</script>
+
+</html>

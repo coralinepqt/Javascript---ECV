@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP7 - Exo 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+</body>
+
+<script>
+    function majorite(ddn) {
+        const ladate = new Date()
+        const date = ladate.getFullYear() - 18 + "-" + ladate.getMonth() + "-" + ladate.getDate();
+
+        const dateNaissance = ddn.substr(6, 4) + "-" + ddn.substr(3, 2) + "-" + ddn.substr(0, 2);
+
+        return new Promise((successCallback, failureCallback) => {
+            if (date > dateNaissance) {
+                successCallback();
+            } else {
+                failureCallback();
+            }
+        })
+    }
+
+    function successCallback() {
+        console.log(true);
+    }
+
+    function failureCallback() {
+        console.error("Echec");
+    }
+
+    const promise = majorite("21/12/1999");
+    promise.then(successCallback, failureCallback);
+</script>
+
+</html>

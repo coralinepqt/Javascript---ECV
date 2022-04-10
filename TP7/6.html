@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TP7 - Exo 6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Caractères</h1>
+    <ul id="caract"></ul>
+
+    <h1>Vaisseaux</h1>
+    <ul id="vaisseaux"></ul>
+
+    <h1>Planètes</h1>
+    <ul id="planetes"></ul>
+</body>
+
+<script>
+    function createNode(element) {
+        return document.createElement(element);
+    }
+
+    function append(parent, el) {
+        return parent.appendChild(el);
+    }
+
+
+    async function caracteres() {
+        try {
+            const ulCaract = document.getElementById('caract');
+            const url = 'https://swapi.dev/api/people/';
+
+            await fetch(url)
+                .then((resp) => resp.json())
+                .then(function(data) {
+                    let caracteres = data.results;
+                    return caracteres.map(function(caract) {
+                        let li = createNode('li');
+                        li.innerHTML = `${caract.name}`;
+                        append(ulCaract, li);
+                    })
+                })
+                .catch(function(e) {
+                    console.log(e);
+                });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    async function vaisseaux() {
+        try {
+            const ulVaisseaux = document.getElementById('vaisseaux');
+            const url = 'https://swapi.dev/api/starships/';
+
+            await fetch(url)
+                .then((resp) => resp.json())
+                .then(function(data) {
+                    let vaisseaux = data.results;
+                    return vaisseaux.map(function(vaisseau) {
+                        let li = createNode('li');
+                        li.innerHTML = `${vaisseau.name}`;
+                        append(ulVaisseaux, li);
+                    })
+                })
+                .catch(function(e) {
+                    console.log(e);
+                });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    async function planetes() {
+        try {
+            const ulPlanetes = document.getElementById('planetes');
+            const url = 'https://swapi.dev/api/planets/';
+
+            await fetch(url)
+                .then((resp) => resp.json())
+                .then(function(data) {
+                    let planetes = data.results;
+                    return planetes.map(function(planete) {
+                        let li = createNode('li');
+                        li.innerHTML = `${planete.name}`;
+                        append(ulPlanetes, li);
+                    })
+                })
+                .catch(function(e) {
+                    console.log(e);
+                });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    caracteres();
+    vaisseaux();
+    planetes();
+</script>
+
+</html>
